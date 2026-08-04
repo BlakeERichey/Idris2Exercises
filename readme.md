@@ -6,6 +6,7 @@
 | Exercise 3 | test a b; is a = b^2    | Complete |
 | Exercise 4 | isSmall a; is a <= 100  | Complete |
 | Exercise 5 | is abs(a) <= 100        | Complete |
+| Exercise 6 | and, or, negate         | Complete |
 
 **Exercise 1**
 Reimplement functions testSquare and twice by using the dot operator and dropping the
@@ -24,3 +25,26 @@ Declare and implement function isSmall , which checks whether its Integer argume
 
 **Exercise 5**
 Declare and implement function absIsSmall , which checks whether the absolute value of its Integer argument is less than or equal to 100. Use functions isSmall and abs (from the Idris Prelude) in your implementation, which should be in point-free style. 
+
+**Exercise 6**
+In this slightly extended exercise we are going to implement some utilities for working with
+Integer predicates (functions from Integer to Bool ). Implement the following higher-order
+functions (use boolean operators `&&` , `||` , and function `not` in your implementations):
+
+```
+-- return true, if and only if both predicates hold
+and : (Integer -> Bool) -> (Integer -> Bool) -> Integer -> Bool
+-- return true, if and only if at least one predicate holds
+or : (Integer -> Bool) -> (Integer -> Bool) -> Integer -> Bool
+-- return true, if the predicate does not hold
+negate : (Integer -> Bool) -> Integer -> Bool
+```
+
+After solving this exercise, give it a go in the REPL. In the example below, we use binary function
+and in infix notation by wrapping it in backticks. This is just a syntactic convenience to make
+certain function applications more readable:
+
+```
+Tutorial.Functions1> negate (isSmall `and` isOdd) 73
+False
+```
