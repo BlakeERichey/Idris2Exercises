@@ -1,8 +1,7 @@
 # Idris 2
 *.ttc
 *.ttm
-/build
-src/build
+build
 
 # Idris 1
 *.ibc
