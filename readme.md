@@ -1,8 +1,10 @@
+
 | Exercise   | Short Description       | Status   |
 | ---------- | ----------------------- | -------- |
 | Exercise 1 | testSquare and twice    | Complete |
 | Exercise 2 | isOdd using Prelude not | Complete |
 | Exercise 3 | test a b; is a = b^2    | Complete |
+| Exercise 4 | isSmall a; is a <= 100  | Complete |
 
 **Exercise 1**
 Reimplement functions testSquare and twice by using the dot operator and dropping the
@@ -15,3 +17,6 @@ Declare and implement function isOdd by combining functions isEven from above an
 
 **Exercise 3**
 Declare and implement function isSquareOf , which checks whether its first Integer argument is the square of the second argument.
+
+**Exercise 4**
+Declare and implement function isSmall , which checks whether its Integer argument is less than or equal to 100. Use one of the comparison operators <= or >= in your implementation.
