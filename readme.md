@@ -48,3 +48,29 @@ certain function applications more readable:
 Tutorial.Functions1> negate (isSmall `and` isOdd) 73
 False
 ```
+
+**Exercise 7**
+As explained above, Idris allows us to define our own infix operators. Even better, Idris
+supports overloading of function names, that is, two functions or operators can have the same
+name, but different types and implementations. Idris will make use of the types to distinguish
+between equally named operators and functions.
+This allows us, to reimplement functions and , or , and negate from Exercise 6 by using the
+existing operator and function names from boolean algebra:
+
+```
+-- return true, if and only if both predicates hold
+(&&) : (Integer -> Bool) -> (Integer -> Bool) -> Integer -> Bool
+x && y = and x y
+-- return true, if and only if at least one predicate holds
+(||) : (Integer -> Bool) -> (Integer -> Bool) -> Integer -> Bool
+-- return true, if the predicate does not hold
+not : (Integer -> Bool) -> Integer -> Bool
+```
+
+
+Implement the other two functions and test them at the REPL:
+
+```
+Tutorial.Functions1> not (isSmall && isOdd) 73
+False
+```
