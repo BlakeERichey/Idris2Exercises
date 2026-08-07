@@ -1,0 +1,1 @@
+data LoginError = InvalidUsername String | InvalidPassword | InvalidKey
